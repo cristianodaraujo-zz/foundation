@@ -45,5 +45,52 @@
   menu.php
   footer.php
 
+> Commitando projeto
 
-  
+  git add .
+  git commit - m "Adicinando projeto Foundation"
+
+> Primeira versão do projeto
+
+  git tag 0.1.0
+
+> Subindo arquivos e versao para o github
+
+  git remote add origin git@github.com:cristianodaraujo/foundation.git
+  git push -u origin master
+  git push origin master --tags
+ 
+> Adicionando uma pasta dentro da pasta html
+
+  elements/
+
+> Adicionando arquivos na pasta elements
+
+  home.php
+  empresa.php
+  produtos.php
+  serviços.php
+  contato.php
+  email.php 
+
+> Commitando modificações no projeto
+
+  git add .
+  git commit -m "Adicionando mais alguns arquivos no projeto Foundation"
+
+> Gerandndo a segunda versão de melhoria no projeto
+
+  git tag 0.1.1
+
+> Mandando modificações e versões para o github
+
+  git push -u origin master
+  git push origin master --tags
+
+---
+
+### Contato ###
+
+*    Nome: ** Cristiano Araujo **
+*    E-mail: ** cristianodaraujo@gmail.com **
+
