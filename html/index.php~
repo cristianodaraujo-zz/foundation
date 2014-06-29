@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title of document</title>
+    <!--  META TAGS  -->
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+    <!--  CSS  -->
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+
+    <!--  JS  -->
+    <script type="text/javascript" src="../js/bootstrap/bootstrap.js"></script>
+</head>
+<body>
+    <!-- Begin MAIN  -->
+    <div id="main">
+        <!--  Begin HEADER  -->
+        <div id="header">
+            <div class="logo">
+
+            </div>
+            <div class="box-menu">
+                <ul class="menu">
+                    <li class="list-menu"><a class="link-menu" href="index.php">Home</a></li>
+                    <li class="list-menu"><a class="link-menu" href="empresa.php">Empresa</a></li>
+                    <li class="list-menu"><a class="link-menu" href="produtos.php">Produtos</a></li>
+                    <li class="list-menu"><a class="link-menu" href="servicos.php">Servicos</a></li>
+                    <li class="list-menu"><a class="link-menu" href="contato.php">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End HEADER  -->
+    </div>
+    <!--  End MAIN  -->
+</body>
+</html>
