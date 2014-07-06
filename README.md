@@ -87,6 +87,24 @@
   git push -u origin master
   git push origin master --tags
 
+> Modificando arquivo index/criando rotas
+> Criando arquivo 404
+
+  elements/404.php
+
+> Commitando alerações no projeto
+
+  git commit -a -m "Direcionando rotas para index.php"
+
+> Gerando tercira versão de melhoria no projeto
+
+  git tag 0.1.2
+
+> Subindo alterações para o github
+
+  git push -u origin master
+  git push origin master --tags
+
 ---
 
 ### Contato ###

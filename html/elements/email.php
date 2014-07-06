@@ -5,6 +5,6 @@
     <p class="text-justify"><b>Assunto: </b><?php echo $_REQUEST["subject"]; ?></p>
     <p class="text-justify"><b>Mensagem: </b><?php echo $_REQUEST["message"]; ?></p>
     <p class="text-danger">
-        Deseja mandar outra mensagem? <b><a href="?page=contato" >Cliqui aqui</a> para voltar ao formulário</b>
+        Deseja mandar outra mensagem? <b><a href="contato" >Cliqui aqui</a> para voltar ao formulário</b>
     </p>
 </div>

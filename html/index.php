@@ -10,14 +10,23 @@
 <!-- Begin Content -->
 <div id="content" class="container">
     <?php
-        $page = $_GET["page"];
-        $elements = array('home', 'produtos', 'empresa', 'servicos', 'contato', 'email');
-        if(($page !== "") and (array_search($page, $elements) !== false)):
+        function get() {
+            $rota = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+            $path = explode("/html/", $rota['path']);
+            $path = ($path[1] == NULL ? 'index' : $path[1]);
+            $elements = array('home', 'produtos', 'empresa', 'servicos', 'contato', 'email');
+            if(($path !== "") and (array_search($path, $elements) !== false)) {
+                require_once("elements/" . $path .".php");
+            }
+            elseif(($path === "index") and array_search($path, $elements) === false) {
+                require_once("elements/home.php");
+            }
+            else {
+                require_once("elements/404.php");
+            }
+        };
+        get();
     ?>
-        <?php require_once("elements/".$page.".php"); ?>
-    <?php else: ?>
-        <?php require_once("elements/home.php"); ?>
-    <?php endif; ?>
 </div>
 <!-- End Content -->
 

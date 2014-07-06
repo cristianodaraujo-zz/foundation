@@ -1,4 +1,4 @@
-<form action="?page=email" method="post" class="form-horizontal">
+<form action="email" method="post" class="form-horizontal">
     <div class="col-lg-6">
         <div class="form-group">
             <label for="idName" class="control-label">Nome: </label>
