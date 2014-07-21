@@ -1,16 +1,3 @@
-<?php
-
-//require_once("../config/config.php");
-
-$sql = "select * from pages where slug = :home";
-$stmt = $connection->prepare($sql);
-$stmt->execute();
-
-$home = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-?>
 <div class="col-sm-6 col-lg-6">
     <h2 class="text-justify">Titulo 2</h2>
     <p class="text-muted">
