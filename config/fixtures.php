@@ -1,7 +1,6 @@
 <?php
 
 require_once("config.php");
- //$home = require_once("../html/elements/home.php");
 
 /*
  * Tabela: páginas
@@ -15,7 +14,7 @@ $stmt = $connection->prepare($sql);
 $stmt->execute();
 
 // Pagina home
-$sql = "Insert into pages(slug, content) values ('home', 'Home');";
+$sql = "Insert into pages(slug, content) values ('home', 'Pagina inicial');";
 $stmt = $connection->prepare($sql);
 $stmt->execute();
 
@@ -35,6 +34,11 @@ $stmt = $connection->prepare($sql);
 $stmt->execute();
 
 // Pagina contato
-$sql = "Insert into pages(slug, content) values ('contato', 'Conteudo da empresa');";
+$sql = "Insert into pages(slug, content) values ('contato', '');";
+$stmt = $connection->prepare($sql);
+$stmt->execute();
+
+// Pagina 404
+$sql = "Insert into pages(slug, content) values ('404', 'Erro 404');";
 $stmt = $connection->prepare($sql);
 $stmt->execute();
