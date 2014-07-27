@@ -111,6 +111,23 @@
 *   user: ** root **
 *   password: ** root **
 
+> Realizando o commit de reorganização dos arquivos e pastas
+
+  git commit -a -m "Reorganização dos arquivos e pastas"
+
+> Gerando quarta versão de melhoria no projeto
+
+  git tag 0.1.3
+
+> Commit para contemplar a última versão
+
+  git commit -a -m "Versao 0.1.3"
+
+> Subindo alterações para o github
+
+  git push -u origin master
+  git push origin master --tags
+
 ---
 ### Contato ###
 
