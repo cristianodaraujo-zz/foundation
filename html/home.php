@@ -1,5 +1,9 @@
+<?php
+$pagina = getRoutes();
+
+?>
 <div class="col-sm-6 col-lg-6">
-    <h2 class="text-justify">Titulo 2</h2>
+    <h2 class="text-justify"><?php $pagina['content_title']; ?></h2>
     <p class="text-muted">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem consequuntur dolorem doloribus ex facere, id, maxime mollitia perferendis quod temporibus voluptate voluptatibus. Labore necessitatibus neque optio, quidem tenetur voluptatum.
     </p>

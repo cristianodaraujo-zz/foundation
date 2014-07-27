@@ -105,8 +105,13 @@
   git push -u origin master
   git push origin master --tags
 
----
+> Reorganizando as páginas do site
+> Crinado funções com conexão dinâmica com o banco de dados
+> Acessando o banco de dados
+*   user: ** root **
+*   password: ** root **
 
+---
 ### Contato ###
 
 *    Nome: ** Cristiano Araujo **
