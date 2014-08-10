@@ -1,3 +1,4 @@
+
 <?php
 
 // Seta a página correta na url
@@ -5,7 +6,7 @@ function getRoutes() {
     $route = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     $path = explode("/", $route['path']);
     $path = ($path[1] == null ? 'index' : $path[1]);
-    $elements = array('home', 'produtos', 'empresa', 'servicos', 'contato', 'email', '404', 'busca');
+    $elements = array('home', 'produtos', 'empresa', 'servicos', 'contato', 'email', '404', 'busca', 'admin');
     if(($path !== "") and (array_search($path, $elements) !== false)) {
         if($path == 'contato') {
             require_once('pages/contato.php');
@@ -16,6 +17,9 @@ function getRoutes() {
         elseif($path == 'busca') {
             require_once('pages/busca.php');
         }
+        elseif($path == 'admin') {
+            require_once('pages/index.php');
+        }
         else {
             $route = listingPages('pages', $path);
         }
@@ -25,6 +29,8 @@ function getRoutes() {
     }
     else {
         $route = listingPages('pages', '404' );
+        header("HTTP/1.0 404 Not Found");
     }
     return $route;
 };
+

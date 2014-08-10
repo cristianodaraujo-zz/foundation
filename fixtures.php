@@ -9,7 +9,7 @@ function startDatabase() {
         'host' => "localhost",
         'user' => "root",
         'password' => "root",
-        'utf8' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8' ]
+        'utf8' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8']
     );
     $database = 'site_simples';
     $table = 'pages';
@@ -32,8 +32,8 @@ function startDatabase() {
             content_title varchar(255) not null,
             content_main text);";
         $connection->exec($sql);
-
-    } catch (\PDOException $error) {
+    }
+    catch (\PDOException $error) {
         die("Código de erro: " . $error->getCode() . ": " . $error->getMessage());
     }
     return $connection;
@@ -75,3 +75,48 @@ $registerContents = array(
     'ERROR: Página não encontrada!'
 );
 registering('pages',$registerContents);
+
+
+function criarDbAdmin() {
+    $configAdmin = array (
+        'database' => "mysql",
+        'host' => "localhost",
+        'user' => "root",
+        'password' => "root",
+        'utf8' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8']
+    );
+    $database = 'site_simples';
+    $table = 'admin';
+
+    try {
+        $connection = new \PDO(
+            $configAdmin['database'].":host=".$configAdmin['host'].";dbname=".$database,
+            $configAdmin['user'],
+            $configAdmin['password'],
+            $configAdmin['utf8']
+        );
+
+        $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $connection->query("create database if not exists $database");
+        $connection->query("use $database");
+        $sql ="create table if not exists $table(
+            id int auto_increment not null primary key,
+            login varchar(255) not null,
+            email varchar(255) not null,
+            senha varchar(255) not null);";
+        $connection->exec($sql);
+    }
+    catch (\PDOException $error) {
+        die("Código de erro: " . $error->getCode() . ": " . $error->getMessage());
+    }
+    return $connection;
+}
+//função para pegar a senha digitada e cadastrar no banco de dados cryptografada
+function passCrypt($senha) {
+    $senhaCrypt = password_hash($senha, PASSWORD_DEFAULT);
+    return $senhaCrypt;
+}
+
+criarDbAdmin();
+$registerContents = array('admin','admin@admin.com', passCrypt('admin'));
+registeringAdmin('admin',$registerContents);

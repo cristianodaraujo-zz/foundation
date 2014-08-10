@@ -23,3 +23,6 @@
     </form>
 </div>
 
+<ul class="nav navbar-nav col-md-1 admin">
+    <li><a href="admin/index.php">Admin</a></li>
+</ul>

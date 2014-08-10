@@ -42,6 +42,23 @@ function registering($table, $registerContents) {
     }
 }
 
+// Realiza o registro das tabelas
+function registeringAdmin($table, $registerContents) {
+    $connection = connection();
+    $areas = count($registerContents);
+
+    try {
+        $register = $connection->prepare("insert into {$table} (login, email, senha) values (?, ?, ?)");
+        for($count = 0; $count < $areas; $count++):
+            $register->bindValue($count+1, $registerContents[$count]);
+        endfor;
+        $register->execute();
+    }
+    catch (\PDOException $error) {
+        die("Código de erro: " . $error->getCode() . ": " . $error->getMessage());
+    }
+}
+
 // Realiza a listagem das tabelas
 function listing($table) {
     $connection = connection();
@@ -56,7 +73,6 @@ function listing($table) {
         die("Código de erro: " . $error->getCode() . ": " . $error->getMessage());
     }
     return $contents;
-
 }
 
 // Realiaza a listagem das tabelas pelo id
